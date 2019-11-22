@@ -1,0 +1,61 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "stone_break",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.43333333333333335,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "b262fb0f-a148-406f-9401-f7f260ea0753"
+            }
+          },
+          {
+            "frame": 0.08333333333333333,
+            "value": {
+              "__uuid__": "17631bdf-462c-47c0-97e9-27cb33e837ed"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "6be423d2-aa0c-41f8-9a55-ddd6bb97a9bd"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "92257017-f567-4332-8441-5b9a1dfb6936"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "c51390f1-5273-4b06-a3bb-2a551b16a123"
+            }
+          },
+          {
+            "frame": 0.4166666666666667,
+            "value": {
+              "__uuid__": "04e7b3f3-17a3-4bb8-8f8a-09b020b5eee3"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 0.4166666666666667,
+      "func": "onHitEnd",
+      "params": []
+    }
+  ]
+}
