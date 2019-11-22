@@ -40,7 +40,6 @@ cc.Class({
         id:0,
     },
 
-    // LIFE-CYCLE CALLBACKS:
      // LIFE-CYCLE CALLBACKS:
      onCollisionEnter:function(other,self){              
         if(other.node.group == 'bullet') //检测碰撞组
@@ -83,7 +82,6 @@ cc.Class({
     },
  
     onLoad () {
-        this.gameManager=cc.find("GameManager").getComponent("GameManager");
         var anim = this.getComponent(cc.Animation);
         var animState=anim.play();
         animState.wrapMode = cc.WrapMode.Loop;

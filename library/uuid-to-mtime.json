@@ -100,8 +100,8 @@
     "relativePath": "Resources\\pic\\Background.png"
   },
   "f1a753a3-867a-41ec-8a61-87158a0c597c": {
-    "asset": 1573570591125,
-    "meta": 1573570601681,
+    "asset": 1574440118507,
+    "meta": 1574440118528,
     "relativePath": "Scenes\\GameMenu.fire"
   },
   "d08a79cd-b68b-42f4-bf2c-893cffa4004f": {
@@ -605,8 +605,8 @@
     "relativePath": "Anim"
   },
   "c5e5c339-ed6b-41fb-9023-be10bd23edd5": {
-    "asset": 1574214566718,
-    "meta": 1574214580790,
+    "asset": 1574440164836,
+    "meta": 1574440164849,
     "relativePath": "Scenes\\GameOver.fire"
   },
   "4815c8ea-50f9-4927-9542-0b409fb8e53d": {
@@ -914,14 +914,14 @@
     "meta": 1574409171377,
     "relativePath": "Anim\\storage"
   },
-  "450e91af-53f3-424c-8090-cacf3d15bfee": {
-    "asset": 1574437983459,
-    "meta": 1574438011182,
-    "relativePath": "Scripts\\player\\PlayerCollider.js"
-  },
   "22720171-8f53-4490-9e96-6d4e7c5acd84": {
     "asset": 1574438101617,
     "meta": 1574438105133,
     "relativePath": "Scripts\\GameManager.js"
+  },
+  "450e91af-53f3-424c-8090-cacf3d15bfee": {
+    "asset": 1574439314664,
+    "meta": 1574439356176,
+    "relativePath": "Scripts\\player\\PlayerCollider.js"
   }
 }

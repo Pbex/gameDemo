@@ -47,7 +47,6 @@ cc.Class({
     },
 
     // LIFE-CYCLE CALLBACKS:
-    // LIFE-CYCLE CALLBACKS:
     onCollisionEnter: function onCollisionEnter(other, self) {
         if (other.node.group == 'bullet') //检测碰撞组
             {
