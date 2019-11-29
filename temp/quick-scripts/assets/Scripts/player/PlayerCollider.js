@@ -13,9 +13,9 @@ cc._RF.push(module, '450e9GvU/NCTICQys89Fb/u', 'PlayerCollider', __filename);
 // Learn life-cycle callbacks:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
-var untouchableTime = 10;
+var untouchableTime = 5;
 var isUntouchable = false;
-var untouchableTimer = 0;
+
 cc.Class({
     extends: cc.Component,
 
@@ -43,18 +43,16 @@ cc.Class({
             default: null,
             type: cc.Node
         },
-        id: 0
+        id: 0,
+        untouchableTimer: 0
     },
 
     // LIFE-CYCLE CALLBACKS:
     onCollisionEnter: function onCollisionEnter(other, self) {
         if (other.node.group == 'bullet') //检测碰撞组
             {
-                console.log("on hit");
-                this.gameManager.getComponent('GameManager').decreaseHealth();
+                // console.log("on hit");
                 other.getComponent('Bullet').onHit();
-                this.node.group = 'default';
-                isUntouchable = true;
 
                 //碰撞则播放动画
                 // other.node.removeFromParent();
@@ -72,6 +70,9 @@ cc.Class({
                 //      },this); 
                 // }
             }
+        this.node.group = 'default';
+        this.gameManager.getComponent('GameManager').decreaseHealth();
+        isUntouchable = true;
     },
 
     destoryCall: function destoryCall() {
@@ -96,10 +97,11 @@ cc.Class({
         var angel = Math.atan2(this.stick.getComponent('JoyStick').dir.y, this.stick.getComponent('JoyStick').dir.x);
         var degree = angel * 180 / Math.PI;
         degree = degree - 90;
-
         this.node.angle = degree;
-        if (this.gameManager.getComponent('GameManager').getHealth() == this.id) {
 
+        // console.log(this.gameManager.getComponent('GameManager').getHealth());
+
+        if (this.gameManager.getComponent('GameManager').getHealth() == this.id) {
             var anim = this.getComponent(cc.Animation);
             anim.play('defeated');
         }
@@ -107,11 +109,11 @@ cc.Class({
             if (this.node.group != 'default') {
                 this.node.group = 'default';
             }
-            untouchableTimer += dt;
-            if (untouchableTimer > untouchableTime) {
+            this.untouchableTimer += dt;
+            if (this.untouchableTimer > untouchableTime) {
                 isUntouchable = false;
                 this.node.group = 'player';
-                untouchableTimer = 0;
+                this.untouchableTimer = 0;
             }
         } else {
             if (this.node.group != 'player') {

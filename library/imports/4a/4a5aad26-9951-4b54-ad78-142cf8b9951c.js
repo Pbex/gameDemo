@@ -17,6 +17,8 @@ var bulletTimer = 0;
 var directionTimer = 0;
 var counter = 0;
 var bulletDirection = 0;
+var playerBulletTimer = 0;
+var playerBulletTime = 0.5;
 
 cc.Class({
     extends: cc.Component,
@@ -42,10 +44,15 @@ cc.Class({
             type: cc.Node
         },
 
-        bullet: {
-            default: null,
-            type: cc.Prefab
-        },
+        boss: cc.Node,
+        bossGenerateScore: 1000,
+
+        slowStone: cc.Prefab,
+        normalStone: cc.Prefab,
+        fastStone: cc.Prefab,
+        playerBullet: cc.Prefab,
+
+        player: cc.Node,
 
         directionSwapTime: 30,
         bulletSpeed: 1,
@@ -56,12 +63,13 @@ cc.Class({
             type: cc.Label
         },
 
+        radar: cc.Node,
+
         generateBullets: true
     },
 
     addSpeed: function addSpeed() {
-        this.bulletGenerateTime -= 0.1;
-        this.bulletSpeed += 0.2;
+        this.bulletGenerateTime -= 0.25;
     },
 
 
@@ -96,23 +104,43 @@ cc.Class({
     },
 
     spawnNewBullets: function spawnNewBullets(speedUp) {
-        var newBullet = cc.instantiate(this.bullet);
-        this.node.addChild(newBullet);
+        switch (speedUp) {
+            case 4:
+                var newBullet = cc.instantiate(this.fastStone);
+                break;
+            case 2:
+                var newBullet = cc.instantiate(this.normalStone);
+                break;
+            case 1:
+                var newBullet = cc.instantiate(this.slowStone);
+                break;
+            default:
+                break;
+        }
+
+        this.node.addChild(newBullet); //add node to canvas
         newBullet.setPosition(this.generateRandomPos());
-        //transfer direction to every bullet
         newBullet.getComponent('Bullet').direction = bulletDirection;
         newBullet.getComponent('Bullet').switchDir();
         newBullet.getComponent('Bullet').speed = this.bulletSpeed * speedUp;
         newBullet.getComponent('Bullet').maxX = this.node.width;
         newBullet.getComponent('Bullet').maxY = this.node.height;
     },
+
+    stopBulletGeneration: function stopBulletGeneration() {
+        this.generateBullets = false;
+    },
+    startBulletGeneration: function startBulletGeneration() {
+        this.generateBullets = true;
+    },
     bulletGenerator: function bulletGenerator(dt) {
         if (directionTimer > this.directionSwapTime) {
-            console.log('direction changed');
+            // console.log('direction changed');
 
             bulletDirection++;
             directionTimer = 0;
             bulletDirection %= 4;
+            this.addSpeed();
         }
         if (bulletTimer > this.bulletGenerateTime) {
             bulletTimer = 0;
@@ -125,8 +153,6 @@ cc.Class({
             }
             counter++;
             counter %= 10;
-            this.gameManager.getComponent('GameManager').addScore();
-            this.scoreLabel.string = 'Score: ' + this.gameManager.getComponent('GameManager').getScore();
         }
         bulletTimer += dt;
         directionTimer += dt;
@@ -134,9 +160,7 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad: function onLoad() {
-        this.scoreLabel.string = 'Score: ' + this.gameManager.getComponent('GameManager').getScore();
-    },
+    onLoad: function onLoad() {},
 
 
     // start () {
@@ -146,6 +170,22 @@ cc.Class({
     update: function update(dt) {
         if (this.generateBullets) {
             this.bulletGenerator(dt);
+        }
+        playerBulletTimer += dt;
+        if (this.gameManager.getComponent('GameManager').getScore() > this.bossGenerateScore) {
+            this.radar.active = false;
+            this.boss.active = true;
+            this.stopBulletGeneration();
+            if (playerBulletTimer > playerBulletTime) {
+
+                var newBullet = cc.instantiate(this.playerBullet);
+                this.node.addChild(newBullet);
+                newBullet.setPosition(this.player.position);
+                newBullet.getComponent('PlayerBullet').moveBullet(this.boss.position);
+                playerBulletTimer = 0;
+            }
+        } else if (this.gameManager.getComponent('GameManager').getScore() > this.bossGenerateScore - 30) {
+            this.radar.active = true;
         }
     }
 });

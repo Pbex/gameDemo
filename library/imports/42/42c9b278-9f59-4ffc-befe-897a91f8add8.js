@@ -45,9 +45,12 @@ cc.Class({
             default: null,
             type: cc.Node
         },
+
         speed: 80,
 
-        playerIndex: 0
+        playerIndex: 0,
+
+        boss: cc.Node
     },
 
     // onLoad () {},

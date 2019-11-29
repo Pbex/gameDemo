@@ -9,8 +9,10 @@
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 var bulletTimer = 0;
 var directionTimer = 0;
-var counter=0;
-var bulletDirection= 0;
+var counter = 0;
+var bulletDirection = 0;
+var playerBulletTimer = 0;
+var playerBulletTime = 0.5;
 
 cc.Class({
     extends: cc.Component,
@@ -36,12 +38,17 @@ cc.Class({
             type: cc.Node,
         },
 
-        bullet: {
-            default: null,
-            type: cc.Prefab
-        },
+        boss: cc.Node,
+        bossGenerateScore: 1000,
 
-        directionSwapTime:30,
+        slowStone: cc.Prefab,
+        normalStone: cc.Prefab,
+        fastStone: cc.Prefab,
+        playerBullet: cc.Prefab,
+
+        player: cc.Node,
+
+        directionSwapTime: 30,
         bulletSpeed: 1,
         bulletGenerateTime: 1,
 
@@ -49,13 +56,14 @@ cc.Class({
             default: null,
             type: cc.Label,
         },
-        
-        generateBullets:true,
+
+        radar: cc.Node,
+
+        generateBullets: true,
     },
 
-    addSpeed(){
-        this.bulletGenerateTime-=0.1;
-        this.bulletSpeed+=0.2;
+    addSpeed() {
+        this.bulletGenerateTime -= 0.25;
     },
 
     generateRandomPos: function () {
@@ -85,54 +93,89 @@ cc.Class({
     },
 
     spawnNewBullets: function (speedUp) {
-        var newBullet = cc.instantiate(this.bullet);
-        this.node.addChild(newBullet);
+        switch (speedUp) {
+            case 4:
+                var newBullet = cc.instantiate(this.fastStone);
+                break;
+            case 2:
+                var newBullet = cc.instantiate(this.normalStone);
+                break;
+            case 1:
+                var newBullet = cc.instantiate(this.slowStone);
+                break;
+            default:
+                break;
+        }
+
+        this.node.addChild(newBullet);//add node to canvas
         newBullet.setPosition(this.generateRandomPos());
-        //transfer direction to every bullet
         newBullet.getComponent('Bullet').direction = bulletDirection;
         newBullet.getComponent('Bullet').switchDir();
-        newBullet.getComponent('Bullet').speed = this.bulletSpeed*speedUp;
+        newBullet.getComponent('Bullet').speed = this.bulletSpeed * speedUp;
         newBullet.getComponent('Bullet').maxX = this.node.width;
         newBullet.getComponent('Bullet').maxY = this.node.height;
     },
-    bulletGenerator(dt){
-        if (directionTimer>this.directionSwapTime) {
-            console.log('direction changed');
-            
+
+    stopBulletGeneration() {
+        this.generateBullets = false;
+    },
+    startBulletGeneration() {
+        this.generateBullets = true;
+    },
+
+    bulletGenerator(dt) {
+        if (directionTimer > this.directionSwapTime) {
+            // console.log('direction changed');
+
             bulletDirection++;
-            directionTimer=0;
-            bulletDirection%=4;
+            directionTimer = 0;
+            bulletDirection %= 4;
+            this.addSpeed();
         }
         if (bulletTimer > this.bulletGenerateTime) {
             bulletTimer = 0;
-            if (counter<4) {
+            if (counter < 4) {
                 this.spawnNewBullets(4);
-            }else if (counter<7) {
+            } else if (counter < 7) {
                 this.spawnNewBullets(2);
-            }else{
+            } else {
                 this.spawnNewBullets(1);
             }
             counter++;
-            counter%=10;
-            this.gameManager.getComponent('GameManager').addScore();
-            this.scoreLabel.string = 'Score: ' + this.gameManager.getComponent('GameManager').getScore();
+            counter %= 10;
         }
         bulletTimer += dt;
-        directionTimer+=dt;
+        directionTimer += dt;
     },
     // LIFE-CYCLE CALLBACKS:
 
     onLoad() {
-        this.scoreLabel.string = 'Score: ' + this.gameManager.getComponent('GameManager').getScore();
+
     },
 
     // start () {
 
     // },
-    
+
     update(dt) {
         if (this.generateBullets) {
             this.bulletGenerator(dt);
+        }
+        playerBulletTimer += dt;
+        if (this.gameManager.getComponent('GameManager').getScore() > this.bossGenerateScore) {
+            this.radar.active = false;
+            this.boss.active = true;
+            this.stopBulletGeneration();
+            if (playerBulletTimer > playerBulletTime) {
+
+                var newBullet = cc.instantiate(this.playerBullet);
+                this.node.addChild(newBullet);
+                newBullet.setPosition(this.player.position);
+                newBullet.getComponent('PlayerBullet').moveBullet(this.boss.position);
+                playerBulletTimer = 0;
+            }
+        } else if (this.gameManager.getComponent('GameManager').getScore() > this.bossGenerateScore - 30) {
+            this.radar.active = true;
         }
     },
 });

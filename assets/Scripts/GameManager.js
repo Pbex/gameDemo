@@ -7,6 +7,7 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
+var timer=0;
 var targetScore=new Array(500,1000,2000);
 cc.Class({
     extends: cc.Component,
@@ -28,8 +29,9 @@ cc.Class({
         //     }
         // },
         health:3,
-        score: 0,
         lerpVal: 0.5,
+        score: 0,
+        target:0
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -42,7 +44,7 @@ cc.Class({
     },
 
     addScore() {
-        this.score += this.health;
+        this.score+=this.health;
     },
 
     getScore(){
@@ -57,7 +59,7 @@ cc.Class({
         cc.game.addPersistRootNode(this.node);
         var manager = cc.director.getCollisionManager();
         manager.enabled = true;
-        manager.enabledDebugDraw = true;
+        manager.enabledDebugDraw = false;
         cc.game.addPersistRootNode(this.node);
     },
 
@@ -66,5 +68,11 @@ cc.Class({
     },
 
     update (dt) {
+        timer+=dt;
+        if (timer>1) {
+            this.addScore();
+            timer=0;
+        }
+
     },
 });

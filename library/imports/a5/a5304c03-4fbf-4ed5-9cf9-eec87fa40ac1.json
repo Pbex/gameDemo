@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "playerBullet",
+    "texture": "9ec71552-431d-432d-a5d2-00b46d6b9963",
+    "atlas": "",
+    "rect": [
+      22,
+      18,
+      18,
+      18
+    ],
+    "offset": [
+      -1,
+      5
+    ],
+    "originalSize": [
+      64,
+      64
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

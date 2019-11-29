@@ -60,6 +60,7 @@ cc.Class({
                 break;
             case 1:
                 if (this.node.position.x < -this.maxX) {
+                    // console.log('destroy bullet');
                     this.node.destroy();
                 }
                 this.node.position = new cc.Vec2(this.node.position.x - this.speed * dt, this.node.position.y);
@@ -72,6 +73,7 @@ cc.Class({
                 break;
             case 3:
                 if (this.node.position.x > this.maxX) {
+                    // console.log('destroy bullet');
                     this.node.destroy();
                 }
                 this.node.position = new cc.Vec2(this.node.position.x + this.speed * dt, this.node.position.y);

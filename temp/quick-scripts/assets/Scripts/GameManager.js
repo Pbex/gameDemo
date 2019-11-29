@@ -13,6 +13,7 @@ cc._RF.push(module, '22720Fxj1NEkJ6WbU58Ws2E', 'GameManager', __filename);
 // Learn life-cycle callbacks:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
+var timer = 0;
 var targetScore = new Array(500, 1000, 2000);
 cc.Class({
     extends: cc.Component,
@@ -34,8 +35,9 @@ cc.Class({
         //     }
         // },
         health: 3,
+        lerpVal: 0.5,
         score: 0,
-        lerpVal: 0.5
+        target: 0
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -58,11 +60,17 @@ cc.Class({
         cc.game.addPersistRootNode(this.node);
         var manager = cc.director.getCollisionManager();
         manager.enabled = true;
-        manager.enabledDebugDraw = true;
+        manager.enabledDebugDraw = false;
         cc.game.addPersistRootNode(this.node);
     },
     start: function start() {},
-    update: function update(dt) {}
+    update: function update(dt) {
+        timer += dt;
+        if (timer > 1) {
+            this.addScore();
+            timer = 0;
+        }
+    }
 });
 
 cc._RF.pop();

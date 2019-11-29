@@ -48,7 +48,7 @@
                 "width": 1132
               },
               {
-                "active": 3,
+                "active": 0,
                 "children": [
                   "console",
                   "timeline",
@@ -88,14 +88,13 @@
         "inspector",
         "cocos-services"
       ]
-    },
-    "worker": {}
+    }
   },
   "panels": {
     "project-settings": {
       "x": 672,
       "y": 260,
-      "width": 600,
+      "width": 921,
       "height": 565
     },
     "preferences": {
@@ -109,12 +108,22 @@
       "y": 260,
       "width": 516,
       "height": 539
+    },
+    "builder": {
+      "x": 702,
+      "y": 160,
+      "width": 670,
+      "height": 739
     }
   },
   "panelLabelWidth": {
     "inspector": null,
-    "preferences": null
+    "preferences": null,
+    "builder": null,
+    "project-settings": null
   },
   "panelLabelWidth.inspector": null,
-  "panelLabelWidth.preferences": null
+  "panelLabelWidth.preferences": null,
+  "panelLabelWidth.builder": null,
+  "panelLabelWidth.project-settings": null
 }

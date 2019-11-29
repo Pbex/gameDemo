@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "Bullet from upside",
+    "_name": "slowStone",
     "_objFlags": 0,
     "_native": "",
     "data": {
@@ -57,7 +57,7 @@
       "__type__": "TypedArray",
       "ctor": "Float32Array",
       "array": [
-        0,
+        83,
         0,
         0,
         0,
@@ -165,6 +165,7 @@
       "__id__": 1
     },
     "_enabled": true,
+    "stopBullet": false,
     "_id": ""
   },
   {
