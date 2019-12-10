@@ -45,7 +45,7 @@
                 ],
                 "height": 673,
                 "type": "panel",
-                "width": 1132
+                "width": 1125
               },
               {
                 "active": 0,
@@ -57,12 +57,12 @@
                 ],
                 "height": 286,
                 "type": "panel",
-                "width": 1132
+                "width": 1125
               }
             ],
             "height": 962,
             "type": "dock-v",
-            "width": 1132
+            "width": 1125
           },
           {
             "active": 0,
@@ -72,7 +72,7 @@
             ],
             "height": 962,
             "type": "panel",
-            "width": 459
+            "width": 466
           }
         ],
         "type": "dock-h"
@@ -117,12 +117,12 @@
     }
   },
   "panelLabelWidth": {
-    "inspector": null,
+    "inspector": "30.9955%",
     "preferences": null,
     "builder": null,
     "project-settings": null
   },
-  "panelLabelWidth.inspector": null,
+  "panelLabelWidth.inspector": "30.9955%",
   "panelLabelWidth.preferences": null,
   "panelLabelWidth.builder": null,
   "panelLabelWidth.project-settings": null

@@ -51,35 +51,25 @@ cc.Class({
     onCollisionEnter: function onCollisionEnter(other, self) {
         if (other.node.group == 'bullet') //检测碰撞组
             {
-                // console.log("on hit");
                 other.getComponent('Bullet').onHit();
-
-                //碰撞则播放动画
-                // other.node.removeFromParent();
-                // this.hp -= 1;
-                // if(this.hp == 0 )
-                // {
-                //   //  enemyReq.add_Score();
-                //      this.node.group = 'default'; //防止播放爆炸动画时继续检测导致神奇的事情发生
-                //      var en = this.node.getComponent(cc.Animation);
-                //      var na = this.node.name;
-                //     en.play(na+"_des"); //播放动画
-                //      en.on('finished',function(e){
-                //             this.node.removeFromParent();
-                //            // var score = this.node.getComponent(cc.Label);   
-                //      },this); 
-                // }
             }
-        this.node.group = 'default';
-        this.gameManager.getComponent('GameManager').decreaseHealth();
-        isUntouchable = true;
+        console.log('collision enter');
+        if (self.group == 'player') {
+            this.gameManager.getComponent('GameManager').decreaseHealth();
+            self.group = 'default';
+            console.log('scheduler problem');
+
+            cc.director.getScheduler().schedule(this.touchable(), this, 5, 1, 0, false);
+            console.log('scheduler problem');
+        }
     },
 
+    touchable: function touchable() {
+        this.node.group = 'player';
+    },
     destoryCall: function destoryCall() {
         if (this.id == 0) {
             this.gameOver();
-        } else {
-            this.node.destroy();
         }
     },
     gameOver: function gameOver() {
@@ -104,21 +94,6 @@ cc.Class({
         if (this.gameManager.getComponent('GameManager').getHealth() == this.id) {
             var anim = this.getComponent(cc.Animation);
             anim.play('defeated');
-        }
-        if (isUntouchable) {
-            if (this.node.group != 'default') {
-                this.node.group = 'default';
-            }
-            this.untouchableTimer += dt;
-            if (this.untouchableTimer > untouchableTime) {
-                isUntouchable = false;
-                this.node.group = 'player';
-                this.untouchableTimer = 0;
-            }
-        } else {
-            if (this.node.group != 'player') {
-                this.node.group = 'player';
-            }
         }
     }
 });

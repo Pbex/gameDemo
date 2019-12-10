@@ -7,7 +7,7 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
-var timer=0;
+var timer = 0;
 cc.Class({
     extends: cc.Component,
 
@@ -27,35 +27,43 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        health:1000,
-        state1:666,
-        state2:333,//the certian number that makes the movement of boss become different
+        health: 500,
+        state1: 250,
+        state2: 100,//the certian number that makes the movement of boss become different
+        crashHandler: cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
-
+    onCrash() {
+        
+        this.crashHandler.getComponent('OnCrash').onCrash();
+    },
     // onLoad () {},
 
-    onCollisionEnter:function(other,self){
-        if(other.node.group == 'playerBullet'){
+    onCollisionEnter: function (other, self) {
+        if (other.node.group == 'playerBullet') {
             this.health--;
             // console.log('boss hit by bullet');
-            
-        }else if(other.node.group == 'bullet'){
-            this.health-=5;
+
+        } else if (other.node.group == 'bullet') {
+            this.health -= 3;
             other.getComponent('Bullet').onHit();
+        } else if (other.node.group == 'crash') {
+            this.health -= 5;
+            self.getComponent('BossProperty').onCrash();
         }
 
-        if (this.health<0) {
+        if (this.health < 0) {
             cc.director.loadScene("GameWin");
         }
     },
 
-    start () {
+
+    start() {
 
     },
 
-    update (dt) {
+    update(dt) {
 
     },
 });

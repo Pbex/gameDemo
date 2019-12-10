@@ -121,7 +121,7 @@ cc.Class({
         newBullet.getComponent('Bullet').speed = this.bulletSpeed;
         newBullet.getComponent('Bullet').maxX = this.canvas.width;
         newBullet.getComponent('Bullet').maxY = this.canvas.height;
-
+        
     },
     generateBullets() {
         var anim = this.getComponent(cc.Animation);

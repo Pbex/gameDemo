@@ -33,12 +33,17 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        health: 1000,
-        state1: 666,
-        state2: 333 //the certian number that makes the movement of boss become different
+        health: 500,
+        state1: 250,
+        state2: 100, //the certian number that makes the movement of boss become different
+        crashHandler: cc.Node
     },
 
     // LIFE-CYCLE CALLBACKS:
+    onCrash: function onCrash() {
+
+        this.crashHandler.getComponent('OnCrash').onCrash();
+    },
 
     // onLoad () {},
 
@@ -47,8 +52,11 @@ cc.Class({
             this.health--;
             // console.log('boss hit by bullet');
         } else if (other.node.group == 'bullet') {
-            this.health -= 5;
+            this.health -= 3;
             other.getComponent('Bullet').onHit();
+        } else if (other.node.group == 'crash') {
+            this.health -= 5;
+            self.getComponent('BossProperty').onCrash();
         }
 
         if (this.health < 0) {

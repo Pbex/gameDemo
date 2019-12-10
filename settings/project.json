@@ -5,7 +5,8 @@
     "bullet",
     "player",
     "Boss",
-    "playerBullet"
+    "playerBullet",
+    "crash"
   ],
   "collision-matrix": [
     [
@@ -19,6 +20,7 @@
       false,
       false,
       false,
+      true,
       true
     ],
     [
@@ -31,9 +33,10 @@
     [
       false,
       false,
-      false,
+      true,
       true,
       false,
+      true,
       true
     ],
     [
@@ -43,10 +46,19 @@
       false,
       true,
       false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false
     ]
   ],
   "excluded-modules": [],
-  "last-module-event-record-time": 1574783341197,
+  "last-module-event-record-time": 1575446603445,
   "design-resolution-width": 960,
   "design-resolution-height": 640,
   "fit-width": false,

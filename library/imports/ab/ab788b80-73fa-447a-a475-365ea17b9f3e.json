@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "onCrash0",
+    "texture": "891b683e-f096-40a0-9315-5936c3a9eb7d",
+    "atlas": "",
+    "rect": [
+      20,
+      20,
+      92,
+      84
+    ],
+    "offset": [
+      2,
+      2
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

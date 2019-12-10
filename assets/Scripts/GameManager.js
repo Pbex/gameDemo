@@ -30,8 +30,11 @@ cc.Class({
         // },
         health:3,
         lerpVal: 0.5,
-        score: 0,
-        target:0
+        gameTime: 0,
+        target:0,
+        bulletCount:0,
+
+        playerLifeLabel:cc.Label,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -43,24 +46,48 @@ cc.Class({
         return this.health;
     },
 
-    addScore() {
-        this.score+=this.health;
+    addGameTime() {
+        this.gameTime++;
     },
 
-    getScore(){
-        return this.score;
+    getGameTime(){
+        return this.gameTime;
     },
+    setGameTime(time){
+        this.gameTime=time;
+    },
+
+    //prove can't be used
+    bulletAdd(){
+        // console.log('game manager bullet add');
+        
+        this.bulletCount++;
+        // console.log('game manager bullet add done');
+    },
+    //prove can't be used
+    bulletDecrease(bulletCount){
+        console.log(bulletCount);
+        
+        this.bulletCount=bulletCount;
+    },
+    
+
+    getBullet(){
+        return this.bulletCount;
+    },
+
+
 
     gameOver(){
         cc.director.loadScene("GameOver");
     },
 
     onLoad () {
-        cc.game.addPersistRootNode(this.node);
+        // cc.game.addPersistRootNode(this.node);
         var manager = cc.director.getCollisionManager();
         manager.enabled = true;
         manager.enabledDebugDraw = false;
-        cc.game.addPersistRootNode(this.node);
+        // cc.game.addPersistRootNode(this.node);
     },
 
     start () {
@@ -70,9 +97,9 @@ cc.Class({
     update (dt) {
         timer+=dt;
         if (timer>1) {
-            this.addScore();
+            this.addGameTime();
             timer=0;
         }
-
+        this.playerLifeLabel.string="Life: "+(this.getHealth()+1);
     },
 });

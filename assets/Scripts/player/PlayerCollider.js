@@ -7,8 +7,8 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
-var untouchableTime=5;
-var isUntouchable=false;
+var untouchableTime = 5;
+var isUntouchable = false;
 
 cc.Class({
     extends: cc.Component,
@@ -29,98 +29,74 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        gameManager:{
-            default : null,
-            type : cc.Node
+        gameManager: {
+            default: null,
+            type: cc.Node
         },
-        stick : {
-            default : null,
-            type : cc.Node
+        stick: {
+            default: null,
+            type: cc.Node
         },
-        id:0,
-        untouchableTimer:0,
+        id: 0,
+        untouchableTimer: 0,
     },
 
-     // LIFE-CYCLE CALLBACKS:
-     onCollisionEnter:function(other,self){              
-        if(other.node.group == 'bullet') //检测碰撞组
-        {   
-            // console.log("on hit");
+    // LIFE-CYCLE CALLBACKS:
+    onCollisionEnter: function (other, self) {
+        if (other.node.group == 'bullet') //检测碰撞组
+        {
             other.getComponent('Bullet').onHit();
+        }
+        console.log('collision enter');
+        if (self.group == 'player') {
+            this.gameManager.getComponent('GameManager').decreaseHealth();
+            self.group = 'default';
+            console.log('scheduler problem');
             
-            //碰撞则播放动画
-            // other.node.removeFromParent();
-            // this.hp -= 1;
-            // if(this.hp == 0 )
-            // {
-            //   //  enemyReq.add_Score();
-            //      this.node.group = 'default'; //防止播放爆炸动画时继续检测导致神奇的事情发生
-            //      var en = this.node.getComponent(cc.Animation);
-            //      var na = this.node.name;
-            //     en.play(na+"_des"); //播放动画
-            //      en.on('finished',function(e){
-            //             this.node.removeFromParent();
-            //            // var score = this.node.getComponent(cc.Label);   
-            //      },this); 
-            // }
+            cc.director.getScheduler().schedule(this.touchable(), this, 5, 1,0,false);
+            console.log('scheduler problem');
         }
-        this.node.group='default';
-        this.gameManager.getComponent('GameManager').decreaseHealth();
-        isUntouchable=true;
     },
 
-    destoryCall(){
-        if (this.id==0) {
+    touchable() {
+        this.node.group = 'player';
+    },
+
+    destoryCall() {
+        if (this.id == 0) {
             this.gameOver();
-        }else{
-            this.node.destroy();
         }
-        
     },
 
-    gameOver(){
+    gameOver() {
         this.gameManager.getComponent('GameManager').gameOver();
     },
- 
-    onLoad () {
+
+    onLoad() {
         var anim = this.getComponent(cc.Animation);
-        var animState=anim.play();
+        var animState = anim.play();
         animState.wrapMode = cc.WrapMode.Loop;
         animState.repeatCount = Infinity;
     },
 
-    start () {
+    start() {
 
     },
 
-    update (dt) {
+    update(dt) {
         // Math.atan2(y,x) 计算出来的结果angel是一个弧度值 数学的弧度是逆时针的 而游戏中是顺时针的
-        var angel = Math.atan2(this.stick.getComponent('JoyStick').dir.y, 
+        var angel = Math.atan2(this.stick.getComponent('JoyStick').dir.y,
             this.stick.getComponent('JoyStick').dir.x);
-        var degree = angel* 180 / Math.PI;
-        degree = degree-90;
+        var degree = angel * 180 / Math.PI;
+        degree = degree - 90;
         this.node.angle = degree;
 
         // console.log(this.gameManager.getComponent('GameManager').getHealth());
-        
-        if (this.gameManager.getComponent('GameManager').getHealth()==this.id) {
+
+        if (this.gameManager.getComponent('GameManager').getHealth() == this.id) {
             var anim = this.getComponent(cc.Animation);
             anim.play('defeated');
         }
-        if (isUntouchable) {
-            if (this.node.group!='default') {
-                this.node.group='default';
-            }
-            this.untouchableTimer+=dt;
-            if (this.untouchableTimer>untouchableTime) {
-                isUntouchable=false;
-                this.node.group='player';
-                this.untouchableTimer=0;
-            }
-        }else{
-            if (this.node.group!='player') {
-                this.node.group='player';
-            }
-        }
+
     },
 });

@@ -70,7 +70,7 @@
     "relativePath": "Scenes"
   },
   "e6b251ef-e829-4db8-94cc-89f996224ad7": {
-    "asset": 1574782151923,
+    "asset": 1575625992279,
     "meta": 1573570313520,
     "relativePath": "Scripts"
   },
@@ -80,7 +80,7 @@
     "relativePath": "Resources"
   },
   "0434ebd5-45e3-4b0c-80b9-adaac3c74b02": {
-    "asset": 1574909387618,
+    "asset": 1575616574572,
     "meta": 1573570345736,
     "relativePath": "Resources\\pic"
   },
@@ -100,8 +100,8 @@
     "relativePath": "Resources\\pic\\Background.png"
   },
   "f1a753a3-867a-41ec-8a61-87158a0c597c": {
-    "asset": 1574782337819,
-    "meta": 1574782337838,
+    "asset": 1575019988673,
+    "meta": 1575019988698,
     "relativePath": "Scenes\\GameMenu.fire"
   },
   "d08a79cd-b68b-42f4-bf2c-893cffa4004f": {
@@ -115,7 +115,7 @@
     "relativePath": "Resources\\pic\\Bullet.png"
   },
   "2df05f8e-8664-422a-8d30-a88011b02b8f": {
-    "asset": 1574154195283,
+    "asset": 1575723702027,
     "meta": 1573630510203,
     "relativePath": "Prefabs"
   },
@@ -130,7 +130,7 @@
     "relativePath": "Resources\\pic\\controlStick.png"
   },
   "fe58fbb7-c008-418d-a468-e2b41e501413": {
-    "asset": 1574779606170,
+    "asset": 1575629260621,
     "meta": 1574149105924,
     "relativePath": "Scripts\\player"
   },
@@ -165,8 +165,8 @@
     "relativePath": "Resources\\pic\\plane\\sprite_2.png"
   },
   "5863b2b0-9a9f-466e-8c56-148f0014d231": {
-    "asset": 1574172051895,
-    "meta": 1574172051912,
+    "asset": 1575019899943,
+    "meta": 1575019899969,
     "relativePath": "Anim\\plane\\Plane.anim"
   },
   "d74214fa-b369-4a76-976e-b6bbc9d6ca16": {
@@ -210,7 +210,7 @@
     "relativePath": "Resources\\pic\\storage\\storage.piskel"
   },
   "3b60f336-2c22-4533-9520-2ca4d87e77d7": {
-    "asset": 1574995669644,
+    "asset": 1575019678820,
     "meta": 1574171509482,
     "relativePath": "Anim"
   },
@@ -225,8 +225,8 @@
     "relativePath": "Prefabs\\Bullets\\slowStone.prefab"
   },
   "e7ade8f3-579a-4354-ada0-42efdd7be615": {
-    "asset": 1575000904833,
-    "meta": 1575000904857,
+    "asset": 1575945258363,
+    "meta": 1575945258379,
     "relativePath": "Scenes\\GameItself.fire"
   },
   "8b5a75e0-e1db-4c18-9490-7e046e843670": {
@@ -510,7 +510,7 @@
     "relativePath": "Anim\\storage"
   },
   "de1b8fa8-f102-4fe6-b72c-a46ad99d7c18": {
-    "asset": 1574907615368,
+    "asset": 1575723206124,
     "meta": 1574650135124,
     "relativePath": "Resources\\pic\\boss"
   },
@@ -530,7 +530,7 @@
     "relativePath": "Resources\\pic\\boss\\boss.piskel"
   },
   "8aa755b3-10c3-41ec-96dc-31ee4d43dd60": {
-    "asset": 1574736535292,
+    "asset": 1575723364714,
     "meta": 1574672929239,
     "relativePath": "Scripts\\Boss"
   },
@@ -675,7 +675,7 @@
     "relativePath": "Anim\\Boss\\radar.anim"
   },
   "a4b55fd3-81f3-482e-a337-0850ff2137e0": {
-    "asset": 1574927594479,
+    "asset": 1575019454256,
     "meta": 1574779060703,
     "relativePath": "Resources\\pic\\background"
   },
@@ -683,11 +683,6 @@
     "asset": 1574947836098,
     "meta": 1574947836118,
     "relativePath": "Anim\\background.anim"
-  },
-  "afa84a36-a2fa-4a22-b83f-159ab29b052a": {
-    "asset": 1574779515775,
-    "meta": 1574779534795,
-    "relativePath": "Resources\\pic\\plane\\playerBullet.piskel"
   },
   "9ec71552-431d-432d-a5d2-00b46d6b9963": {
     "asset": 1574779531245,
@@ -701,18 +696,8 @@
   },
   "f06fd6ab-4d0d-48a0-ab5f-a400ba3419a9": {
     "asset": 1574780918226,
-    "meta": 1574780925981,
+    "meta": 1575628660426,
     "relativePath": "Scripts\\player\\PlayerBullet.js"
-  },
-  "1391a239-f6f7-4f17-88b2-96dc15998657": {
-    "asset": 1574781198013,
-    "meta": 1574781204334,
-    "relativePath": "Scripts\\Boss\\AI.js"
-  },
-  "22720171-8f53-4490-9e96-6d4e7c5acd84": {
-    "asset": 1574781248557,
-    "meta": 1574781249215,
-    "relativePath": "Scripts\\GameManager.js"
   },
   "430eccbf-bf2c-4e6e-8c0c-884bbb487f32": {
     "asset": 1571296446000,
@@ -1090,8 +1075,8 @@
     "relativePath": "model\\primitives.fbx"
   },
   "2f57f494-069f-4e83-a76c-198cf0f6b05c": {
-    "asset": 1574782262227,
-    "meta": 1574782262245,
+    "asset": 1575212859229,
+    "meta": 1575212859252,
     "relativePath": "Scenes\\Help.fire"
   },
   "b3c412b5-6348-486d-a55f-b17499cf3f0d": {
@@ -1108,21 +1093,6 @@
     "asset": 1574778278857,
     "meta": 1574772755266,
     "relativePath": "Anim\\Boss"
-  },
-  "236f5362-32ef-444e-aebb-567cd4cc5952": {
-    "asset": 1574783270343,
-    "meta": 1574783279956,
-    "relativePath": "Scripts\\Boss\\BossProperty.js"
-  },
-  "a6c9f6b5-16ca-4daa-8b46-decc51da0ae8": {
-    "asset": 1574783260479,
-    "meta": 1574783280005,
-    "relativePath": "Scripts\\Bullet.js"
-  },
-  "450e91af-53f3-424c-8090-cacf3d15bfee": {
-    "asset": 1574783235010,
-    "meta": 1574783280092,
-    "relativePath": "Scripts\\player\\PlayerCollider.js"
   },
   "04fa883d-4945-4616-933b-02fb4dabaf62": {
     "asset": 1574824128051,
@@ -1349,9 +1319,234 @@
     "meta": 1574996929504,
     "relativePath": "Anim\\stone\\slowStone"
   },
+  "ab1a1372-ddd0-40dd-927c-b73a8fb9e846": {
+    "asset": 1575017258526,
+    "meta": 1575019454376,
+    "relativePath": "Resources\\pic\\background\\menuSprite_0.png"
+  },
+  "8dfdd113-d0cb-4d31-a0df-1b2b159acf69": {
+    "asset": 1575017321321,
+    "meta": 1575019454397,
+    "relativePath": "Resources\\pic\\background\\menuSprite_1.png"
+  },
+  "15b4f196-f171-4107-9de1-b295680bbb09": {
+    "asset": 1575017665004,
+    "meta": 1575019454493,
+    "relativePath": "Resources\\pic\\background\\menuSprite_2.png"
+  },
+  "8de75ea0-2050-40c1-b0fc-49ee2af8e572": {
+    "asset": 1575017741027,
+    "meta": 1575019454518,
+    "relativePath": "Resources\\pic\\background\\menuSprite_3.png"
+  },
+  "98b68a2b-e84e-4780-b2fa-b0b3f2dcb75c": {
+    "asset": 1575018465437,
+    "meta": 1575019454604,
+    "relativePath": "Resources\\pic\\background\\menuSprite_4.png"
+  },
+  "9b447225-8e97-4ee4-bd5b-ccf2c9635c0e": {
+    "asset": 1575018971821,
+    "meta": 1575019454633,
+    "relativePath": "Resources\\pic\\background\\menuSprite_5.png"
+  },
+  "15e5f2f5-b504-47a5-9675-3e64e6406e26": {
+    "asset": 1575019452670,
+    "meta": 1575019454691,
+    "relativePath": "Resources\\pic\\background\\menuSprite_6.png"
+  },
+  "e460251a-2219-4b31-b7a5-a5f9112924ed": {
+    "asset": 1575019843557,
+    "meta": 1575019843578,
+    "relativePath": "Anim\\menu\\menuBackground.anim"
+  },
+  "163cd62d-f9e2-4eac-9a0d-5853351cb6a1": {
+    "asset": 1575019690746,
+    "meta": 1575019678820,
+    "relativePath": "Anim\\menu"
+  },
+  "0960903d-fbf0-4818-86ab-65357a457f63": {
+    "asset": 1575042016499,
+    "meta": 1575041840356,
+    "relativePath": "Scripts\\help"
+  },
+  "679e0aca-6655-4767-8d23-8d813b5dbcad": {
+    "asset": 1575212814241,
+    "meta": 1575212814967,
+    "relativePath": "Scripts\\help\\helpStrings.js"
+  },
+  "baffc6c6-90a3-4896-b09d-5a133f0930dd": {
+    "asset": 1575617529870,
+    "meta": 1575616574572,
+    "relativePath": "Resources\\pic\\skill"
+  },
+  "35613341-498a-4d10-8bab-427214592b07": {
+    "asset": 1575860853191,
+    "meta": 1575616574573,
+    "relativePath": "Resources\\pic\\skill\\skillCrash"
+  },
+  "afa84a36-a2fa-4a22-b83f-159ab29b052a": {
+    "asset": 1575617478573,
+    "meta": 1575617529887,
+    "relativePath": "Resources\\pic\\plane\\playerBullet.piskel"
+  },
+  "e858005f-1c3c-42b5-8ae8-33106044fed0": {
+    "asset": 1575619036369,
+    "meta": 1575619044047,
+    "relativePath": "Resources\\pic\\skill\\skillCrash.piskel"
+  },
+  "e83d4ce6-a5fa-4df6-a829-52c229beb241": {
+    "asset": 1575619042733,
+    "meta": 1575619044066,
+    "relativePath": "Resources\\pic\\skill\\skillCrash\\skillCrash.png"
+  },
+  "119ec449-ef18-42e2-8056-ac115bd37094": {
+    "asset": 1575619128230,
+    "meta": 1575619137013,
+    "relativePath": "Resources\\pic\\skill\\skillBullet.piskel"
+  },
+  "2fd1e012-537b-4d49-b06b-536a37664611": {
+    "asset": 1575619135816,
+    "meta": 1575619137028,
+    "relativePath": "Resources\\pic\\skill\\skillCrash\\skillBullet.png"
+  },
+  "715a7440-a417-4508-9d23-e9f496eb5115": {
+    "asset": 1575654806395,
+    "meta": 1575625988576,
+    "relativePath": "Scripts\\skill"
+  },
+  "35bce5de-bd7e-48c2-aafa-bc7635f194d1": {
+    "asset": 1575628709550,
+    "meta": 1575628716968,
+    "relativePath": "Scripts\\player\\PlayerSkill.js"
+  },
+  "3c10a61b-57e3-48f1-ad12-b23b910f9a1b": {
+    "asset": 1575723640101,
+    "meta": 1575723206125,
+    "relativePath": "Resources\\pic\\boss\\OnCrash"
+  },
+  "cbb76dfc-25f0-4901-8a09-cb4759f3b377": {
+    "asset": 1575722977980,
+    "meta": 1575723206166,
+    "relativePath": "Resources\\pic\\boss\\OnCrash\\onCrash0.piskel"
+  },
+  "891b683e-f096-40a0-9315-5936c3a9eb7d": {
+    "asset": 1575722996330,
+    "meta": 1575723206188,
+    "relativePath": "Resources\\pic\\boss\\OnCrash\\onCrash0.png"
+  },
+  "865cb93c-e2d7-4778-b309-017cb0d79bf7": {
+    "asset": 1575723020518,
+    "meta": 1575723206200,
+    "relativePath": "Resources\\pic\\boss\\OnCrash\\onCrash1.png"
+  },
+  "21798126-2561-4bd2-80a5-222b9f56c52a": {
+    "asset": 1575723161663,
+    "meta": 1575723206208,
+    "relativePath": "Resources\\pic\\boss\\OnCrash\\onCrash2.png"
+  },
+  "179b1fce-258b-45b8-b631-1bbe43dc3f30": {
+    "asset": 1575723180915,
+    "meta": 1575723206224,
+    "relativePath": "Resources\\pic\\boss\\OnCrash\\onCrash3.png"
+  },
+  "4e833c0e-1b6c-4660-bd7a-7091d2926bbe": {
+    "asset": 1575725461071,
+    "meta": 1575723698295,
+    "relativePath": "Prefabs\\Crashs"
+  },
+  "daf911b8-7567-47eb-be99-f640408f23f0": {
+    "asset": 1575725468696,
+    "meta": 1575725468711,
+    "relativePath": "Prefabs\\Crashs\\onCrash0.prefab"
+  },
+  "6c6550dd-9abe-4091-8331-63f46ffe6bc5": {
+    "asset": 1575725471098,
+    "meta": 1575725471109,
+    "relativePath": "Prefabs\\Crashs\\onCrash1.prefab"
+  },
+  "82eb32c5-5468-4204-a9cf-d5b6fa37065f": {
+    "asset": 1575725474542,
+    "meta": 1575725474555,
+    "relativePath": "Prefabs\\Crashs\\onCrash2.prefab"
+  },
+  "387eb572-91ae-4128-9571-29a0999d53a3": {
+    "asset": 1575725476823,
+    "meta": 1575725476837,
+    "relativePath": "Prefabs\\Crashs\\onCrash3.prefab"
+  },
+  "ed669b87-8ac7-4d18-a62e-12fba3442ae6": {
+    "asset": 1575725478867,
+    "meta": 1575725478878,
+    "relativePath": "Prefabs\\Crashs\\onCrash4.prefab"
+  },
+  "cc193218-b654-4bd7-9cd7-be69a18f9f76": {
+    "asset": 1575725480967,
+    "meta": 1575725480981,
+    "relativePath": "Prefabs\\Crashs\\onCrash5.prefab"
+  },
+  "1391a239-f6f7-4f17-88b2-96dc15998657": {
+    "asset": 1575727914303,
+    "meta": 1575727949192,
+    "relativePath": "Scripts\\Boss\\AI.js"
+  },
+  "b84b5ab0-496d-4165-92c9-1db14295b7c4": {
+    "asset": 1575730988516,
+    "meta": 1575730992693,
+    "relativePath": "Scripts\\skill\\SkillReturn.js"
+  },
+  "a6c9f6b5-16ca-4daa-8b46-decc51da0ae8": {
+    "asset": 1575739853201,
+    "meta": 1575739854280,
+    "relativePath": "Scripts\\Bullet.js"
+  },
+  "236f5362-32ef-444e-aebb-567cd4cc5952": {
+    "asset": 1575813227483,
+    "meta": 1575813231603,
+    "relativePath": "Scripts\\Boss\\BossProperty.js"
+  },
+  "21ec96eb-a5b1-4fd8-9868-716b1d112030": {
+    "asset": 1575860848050,
+    "meta": 1575860853247,
+    "relativePath": "Resources\\pic\\skill\\skillCrash\\crash.png"
+  },
+  "01f2457c-521c-41a2-92a0-56edce3736c1": {
+    "asset": 1575871881008,
+    "meta": 1575871885752,
+    "relativePath": "Scripts\\skill\\SkillManager.js"
+  },
+  "22720171-8f53-4490-9e96-6d4e7c5acd84": {
+    "asset": 1575877651086,
+    "meta": 1575877651677,
+    "relativePath": "Scripts\\GameManager.js"
+  },
   "4a5aad26-9951-4b54-ad78-142cf8b9951c": {
-    "asset": 1574997983790,
-    "meta": 1574997984529,
+    "asset": 1575877710456,
+    "meta": 1575877711256,
     "relativePath": "Scripts\\GameLogic.js"
+  },
+  "e1b6c898-1382-4c45-94fd-d954c126ca04": {
+    "asset": 1575877707713,
+    "meta": 1575877711256,
+    "relativePath": "Scripts\\skill\\SkillCrash.js"
+  },
+  "e5f6c769-11f3-4933-8743-fbfd12b45936": {
+    "asset": 1575878246105,
+    "meta": 1575878246744,
+    "relativePath": "Prefabs\\Crashs\\Timer.js"
+  },
+  "6a9e6262-f456-4d90-9630-7c30797d34ac": {
+    "asset": 1575878511040,
+    "meta": 1575878511593,
+    "relativePath": "Scripts\\Boss\\OnCrash.js"
+  },
+  "450e91af-53f3-424c-8090-cacf3d15bfee": {
+    "asset": 1575880812853,
+    "meta": 1575880830386,
+    "relativePath": "Scripts\\player\\PlayerCollider.js"
+  },
+  "ae49c4d5-c63e-4f65-921a-543c1bd06cae": {
+    "asset": 1575945075067,
+    "meta": 1575945076032,
+    "relativePath": "Scripts\\player\\SkillActor.js"
   }
 }

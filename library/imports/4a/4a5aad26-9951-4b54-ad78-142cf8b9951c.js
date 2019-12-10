@@ -18,8 +18,12 @@ var directionTimer = 0;
 var counter = 0;
 var bulletDirection = 0;
 var playerBulletTimer = 0;
-var playerBulletTime = 0.5;
-
+var playerBulletTime = 0.7;
+var singleBulletTimer = 0;
+var singleBulletTime = 0.1;
+var bulletShooted = 0;
+var isShooting = false;
+var skillChance = true;
 cc.Class({
     extends: cc.Component,
 
@@ -44,32 +48,29 @@ cc.Class({
             type: cc.Node
         },
 
-        boss: cc.Node,
-        bossGenerateScore: 1000,
-
         slowStone: cc.Prefab,
         normalStone: cc.Prefab,
         fastStone: cc.Prefab,
-        playerBullet: cc.Prefab,
 
         player: cc.Node,
+        playerBullet: cc.Prefab,
+        bulletNum: 1,
+        skillActor: cc.Node,
 
         directionSwapTime: 30,
         bulletSpeed: 1,
         bulletGenerateTime: 1,
 
-        scoreLabel: {
-            default: null,
-            type: cc.Label
-        },
-
+        skillChoiceUI: cc.Node,
         radar: cc.Node,
+        boss: cc.Node,
+        bossGenerateTime: 100,
 
         generateBullets: true
     },
 
     addSpeed: function addSpeed() {
-        this.bulletGenerateTime -= 0.25;
+        this.bulletGenerateTime *= 0.85;
     },
 
 
@@ -125,6 +126,8 @@ cc.Class({
         newBullet.getComponent('Bullet').speed = this.bulletSpeed * speedUp;
         newBullet.getComponent('Bullet').maxX = this.node.width;
         newBullet.getComponent('Bullet').maxY = this.node.height;
+        newBullet.getComponent('Bullet').gameManager = this.gameManager;
+        console.log('spwan bullet done');
     },
 
     stopBulletGeneration: function stopBulletGeneration() {
@@ -158,6 +161,59 @@ cc.Class({
         directionTimer += dt;
     },
 
+
+    //todo
+    skillChoice: function skillChoice() {
+        this.skillChoiceUI.active = true;
+        this.skillChoiceUI.getComponent('SkillManager').gameManager = this;
+        //the activation of boss and shooting execute by skill manager
+        // this.boss.active = true;
+        // this.skillActor.getComponent('SkillActor').startShooting();
+    },
+    generateBullet: function generateBullet(dt) {
+        playerBulletTimer += dt;
+        singleBulletTimer += dt;
+
+        if (playerBulletTimer > playerBulletTime) {
+            if (singleBulletTimer > singleBulletTime) {
+                var newBullet = cc.instantiate(this.playerBullet);
+                this.node.addChild(newBullet);
+                newBullet.setPosition(this.player.position);
+                newBullet.getComponent('PlayerBullet').moveBullet(this.boss.position);
+                bulletShooted++;
+                singleBulletTimer = 0;
+                if (bulletShooted == this.bulletNum) {
+                    playerBulletTimer = 0;
+                    bulletShooted = 0;
+                }
+            }
+        }
+    },
+    startShooting: function startShooting() {
+        this.isShooting = true;
+    },
+    stopShooting: function stopShooting() {
+        this.isShooting = false;
+    },
+    bossActive: function bossActive() {
+
+        if (this.gameManager.getComponent('GameManager').getGameTime() > this.bossGenerateTime) {
+            this.gameManager.getComponent('GameManager').setGameTime(0);
+            this.stopBulletGeneration();
+            // if (this.gameManager.getComponent('GameManager').getBullet() <= 0) {
+            //     this.skillChoice();
+            // }
+            if (skillChance) {
+                this.radarState();
+                this.skillChoice();
+                skillChance = false;
+            }
+        }
+    },
+    radarState: function radarState() {
+        this.radar.active = !this.radar.active;
+    },
+
     // LIFE-CYCLE CALLBACKS:
 
     onLoad: function onLoad() {},
@@ -171,21 +227,9 @@ cc.Class({
         if (this.generateBullets) {
             this.bulletGenerator(dt);
         }
-        playerBulletTimer += dt;
-        if (this.gameManager.getComponent('GameManager').getScore() > this.bossGenerateScore) {
-            this.radar.active = false;
-            this.boss.active = true;
-            this.stopBulletGeneration();
-            if (playerBulletTimer > playerBulletTime) {
-
-                var newBullet = cc.instantiate(this.playerBullet);
-                this.node.addChild(newBullet);
-                newBullet.setPosition(this.player.position);
-                newBullet.getComponent('PlayerBullet').moveBullet(this.boss.position);
-                playerBulletTimer = 0;
-            }
-        } else if (this.gameManager.getComponent('GameManager').getScore() > this.bossGenerateScore - 30) {
-            this.radar.active = true;
+        this.bossActive();
+        if (this.isShooting) {
+            this.generateBullet(dt);
         }
     }
 });

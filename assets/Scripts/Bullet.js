@@ -7,7 +7,7 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
-
+var bulletCount=0;
 
 cc.Class({
     extends: cc.Component,
@@ -28,51 +28,49 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        stopBullet:false,
+        stopBullet: false,
     },
 
 
 
     // LIFE-CYCLE CALLBACKS:
-    onHit(){
+    onHit() {
         var anim = this.getComponent(cc.Animation);
-        this.stopBullet=true;
-        anim.play('stone_break').wrapMode=cc.WrapMode.Normal;
+        this.stopBullet = true;
+        anim.play('stone_break').wrapMode = cc.WrapMode.Normal;
     },
-    onHitEnd: function(){
+    onHitEnd: function () {
         this.node.destroy();
     },
     moveBullet: function (dt) {
         // console.log(this.speed);
+        // console.log('move bullet start');
+
+        if (this.node.position.y < -this.maxY || this.node.position.x < -this.maxX ||
+            this.node.position.y > this.maxY || this.node.position.x > this.maxX) {
+            bulletCount--;
+                // this.gameManager.getComponent('GameManager').bulletDecrease(bulletCount);
+            this.node.destroy();
+
+        }
         switch (this.direction) {
             case 0://comes from up
-                if (this.node.position.y < -this.maxY) {
-                    // console.log('destroy bullet');
-                    this.node.destroy();
-                }
+
                 this.node.position = new cc.Vec2(this.node.position.x,
                     this.node.position.y - this.speed * dt);
                 break;
             case 1:
-                if (this.node.position.x < -this.maxX) {
-                    // console.log('destroy bullet');
-                    this.node.destroy();
-                }
+
                 this.node.position = new cc.Vec2(this.node.position.x - this.speed * dt,
                     this.node.position.y);
                 break;
             case 2:
-                if (this.node.position.y > this.maxY) {
-                    this.node.destroy();
-                }
+
                 this.node.position = new cc.Vec2(this.node.position.x,
                     this.node.position.y + this.speed * dt);
                 break;
             case 3:
-                if (this.node.position.x > this.maxX) {
-                    // console.log('destroy bullet');
-                    this.node.destroy();
-                }
+
                 this.node.position = new cc.Vec2(this.node.position.x + this.speed * dt,
                     this.node.position.y);
                 break;
@@ -80,9 +78,11 @@ cc.Class({
             default:
                 break;
         }
+        // console.log('move bullet end');
+
     },
 
-    switchDir(){
+    switchDir() {
         switch (this.direction) {
             case 1:
                 this.node.angle = 270;
@@ -99,10 +99,15 @@ cc.Class({
     },
 
 
-    onLoad () {
+    onLoad() {
+
         var anim = this.getComponent(cc.Animation);
-        anim.play().wrapMode=cc.WrapMode.Loop;
-        anim.play().repeatCount=Infinity;
+        anim.play().wrapMode = cc.WrapMode.Loop;
+        anim.play().repeatCount = Infinity;
+        bulletCount++;
+        // console.log(bulletCount);
+        // this.gameManager.getComponent('GameManager').bulletAdd();
+        
     },
 
     start() {
