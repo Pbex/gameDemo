@@ -20,7 +20,7 @@
         "__id__": 83
       },
       {
-        "__id__": 39
+        "__id__": 23
       }
     ],
     "_active": false,
@@ -90,7 +90,7 @@
         "__id__": 17
       },
       {
-        "__id__": 23
+        "__id__": 25
       },
       {
         "__id__": 46
@@ -99,7 +99,7 @@
         "__id__": 52
       },
       {
-        "__id__": 29
+        "__id__": 31
       },
       {
         "__id__": 58
@@ -309,7 +309,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 108.96,
+      "width": 0,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -360,8 +360,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Life: 3",
-    "_N$string": "Life: 3",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -387,7 +387,7 @@
     "alignMode": 1,
     "_target": null,
     "_alignFlags": 9,
-    "_left": 0,
+    "_left": 54.48,
     "_right": 0,
     "_top": 0,
     "_bottom": 0,
@@ -978,8 +978,11 @@
       "__id__": 17
     },
     "_enabled": true,
-    "player": {
+    "gameManager": {
       "__id__": 23
+    },
+    "player": {
+      "__id__": 25
     },
     "doingSth": false,
     "canvas": {
@@ -997,6 +1000,86 @@
   },
   {
     "__type__": "cc.Node",
+    "_name": "GameManager",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 24
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 0,
+      "height": 0
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float32Array",
+      "array": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": "e67uS1+ylNxrIYSzi1XeBJ"
+  },
+  {
+    "__type__": "22720Fxj1NEkJ6WbU58Ws2E",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 23
+    },
+    "_enabled": true,
+    "health": 3,
+    "lerpVal": 0.1,
+    "gameTime": 0,
+    "target": 0,
+    "bulletCount": 0,
+    "playerLifeLabel": {
+      "__id__": 7
+    },
+    "_id": "1fOlDpCNJLToRF2GfQN4yG"
+  },
+  {
+    "__type__": "cc.Node",
     "_name": "Main",
     "_objFlags": 0,
     "_parent": {
@@ -1004,22 +1087,22 @@
     },
     "_children": [
       {
-        "__id__": 24
+        "__id__": 26
       },
       {
-        "__id__": 26
+        "__id__": 28
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 36
-      },
-      {
-        "__id__": 37
-      },
-      {
         "__id__": 38
+      },
+      {
+        "__id__": 39
+      },
+      {
+        "__id__": 40
       },
       {
         "__id__": 41
@@ -1081,13 +1164,13 @@
     "_name": "crash",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 23
+      "__id__": 25
     },
     "_children": [],
     "_active": false,
     "_components": [
       {
-        "__id__": 25
+        "__id__": 27
       }
     ],
     "_prefab": null,
@@ -1143,7 +1226,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 24
+      "__id__": 26
     },
     "_enabled": true,
     "_materials": [
@@ -1175,16 +1258,16 @@
     "_name": "SkillActor",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 23
+      "__id__": 25
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 27
+        "__id__": 29
       },
       {
-        "__id__": 28
+        "__id__": 30
       }
     ],
     "_prefab": null,
@@ -1240,7 +1323,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 26
+      "__id__": 28
     },
     "_enabled": true,
     "tag": 0,
@@ -1261,17 +1344,17 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 26
+      "__id__": 28
     },
     "_enabled": true,
     "boss": {
       "__id__": 17
     },
     "crashIcon": {
-      "__id__": 29
+      "__id__": 31
     },
     "crash": {
-      "__id__": 24
+      "__id__": 26
     },
     "logic": {
       "__id__": 2
@@ -1287,22 +1370,22 @@
     },
     "_children": [
       {
-        "__id__": 30
+        "__id__": 32
       }
     ],
     "_active": false,
     "_components": [
       {
-        "__id__": 32
-      },
-      {
-        "__id__": 33
-      },
-      {
         "__id__": 34
       },
       {
         "__id__": 35
+      },
+      {
+        "__id__": 36
+      },
+      {
+        "__id__": 37
       }
     ],
     "_prefab": null,
@@ -1358,13 +1441,13 @@
     "_name": "skillCrash",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 29
+      "__id__": 31
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 31
+        "__id__": 33
       }
     ],
     "_prefab": null,
@@ -1420,7 +1503,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 30
+      "__id__": 32
     },
     "_enabled": true,
     "_materials": [
@@ -1452,7 +1535,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 29
+      "__id__": 31
     },
     "_enabled": true,
     "_materials": [
@@ -1482,12 +1565,12 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 29
+      "__id__": 31
     },
     "_enabled": true,
     "_N$totalLength": 1,
     "_N$barSprite": {
-      "__id__": 31
+      "__id__": 33
     },
     "_N$mode": 2,
     "_N$progress": 1,
@@ -1499,7 +1582,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 29
+      "__id__": 31
     },
     "_enabled": true,
     "alignMode": 1,
@@ -1526,15 +1609,15 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 29
+      "__id__": 31
     },
     "_enabled": true,
     "coolDownTime": 5,
     "progressBar": {
-      "__id__": 33
+      "__id__": 35
     },
     "actor": {
-      "__id__": 26
+      "__id__": 28
     },
     "_id": "99rCGNkCdC2JgzTclIjt0b"
   },
@@ -1543,7 +1626,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 23
+      "__id__": 25
     },
     "_enabled": true,
     "_materials": [
@@ -1575,7 +1658,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 23
+      "__id__": 25
     },
     "_enabled": true,
     "tag": 0,
@@ -1596,11 +1679,11 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 23
+      "__id__": 25
     },
     "_enabled": true,
     "gameManager": {
-      "__id__": 39
+      "__id__": 23
     },
     "canvas": {
       "__id__": 2
@@ -1614,95 +1697,15 @@
     "_id": "328xYTR4ZMKIbdcazkIBDk"
   },
   {
-    "__type__": "cc.Node",
-    "_name": "GameManager",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 40
-      }
-    ],
-    "_prefab": null,
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 0,
-      "height": 0
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float32Array",
-      "array": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": "e67uS1+ylNxrIYSzi1XeBJ"
-  },
-  {
-    "__type__": "22720Fxj1NEkJ6WbU58Ws2E",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 39
-    },
-    "_enabled": true,
-    "health": 3,
-    "lerpVal": 0.1,
-    "gameTime": 0,
-    "target": 0,
-    "bulletCount": 0,
-    "playerLifeLabel": {
-      "__id__": 7
-    },
-    "_id": "1fOlDpCNJLToRF2GfQN4yG"
-  },
-  {
     "__type__": "450e9GvU/NCTICQys89Fb/u",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 23
+      "__id__": 25
     },
     "_enabled": true,
     "gameManager": {
-      "__id__": 39
+      "__id__": 23
     },
     "stick": {
       "__id__": 11
@@ -1716,7 +1719,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 23
+      "__id__": 25
     },
     "_enabled": true,
     "_defaultClip": {
@@ -1747,6 +1750,7 @@
     "crashHandler": {
       "__id__": 18
     },
+    "blinking": false,
     "_id": "eaFX+2XpFFaKERHo3YbtXd"
   },
   {
@@ -1928,7 +1932,7 @@
     },
     "_enabled": true,
     "gameManager": {
-      "__id__": 39
+      "__id__": 23
     },
     "stick": {
       "__id__": 11
@@ -1946,10 +1950,10 @@
     },
     "_enabled": true,
     "target": {
-      "__id__": 23
+      "__id__": 25
     },
     "gameManager": {
-      "__id__": 39
+      "__id__": 23
     },
     "_id": "24nXR6WcRE+b0/WQh1hTuv"
   },
@@ -2111,7 +2115,7 @@
     },
     "_enabled": true,
     "gameManager": {
-      "__id__": 39
+      "__id__": 23
     },
     "stick": {
       "__id__": 11
@@ -2132,7 +2136,7 @@
       "__id__": 46
     },
     "gameManager": {
-      "__id__": 39
+      "__id__": 23
     },
     "_id": "7d++UR1LdMjKLz+Hyi6LDj"
   },
@@ -3055,7 +3059,7 @@
       "__id__": 67
     },
     "skillActor": {
-      "__id__": 26
+      "__id__": 28
     },
     "_id": "26T7LLhVRMkbdIafMf1N6q"
   },
@@ -3085,7 +3089,7 @@
     },
     "_enabled": true,
     "gameManager": {
-      "__id__": 39
+      "__id__": 23
     },
     "slowStone": {
       "__uuid__": "4815c8ea-50f9-4927-9542-0b409fb8e53d"
@@ -3097,18 +3101,18 @@
       "__uuid__": "ae752cce-a98c-4d2f-9c91-7b05818766b9"
     },
     "player": {
-      "__id__": 23
+      "__id__": 25
     },
     "playerBullet": {
       "__uuid__": "b82c405d-3dda-45bd-a48f-2437c4b6beb6"
     },
     "bulletNum": 1,
     "skillActor": {
-      "__id__": 26
+      "__id__": 28
     },
-    "directionSwapTime": 20,
+    "directionSwapTime": 10,
     "bulletSpeed": 75,
-    "bulletGenerateTime": 1,
+    "bulletGenerateTime": 0.9,
     "skillChoiceUI": {
       "__id__": 65
     },

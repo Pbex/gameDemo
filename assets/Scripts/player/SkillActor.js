@@ -67,7 +67,11 @@ cc.Class({
         console.log('speed no problem');
         this.node.parent.group='default';//player can't be touch while crash
         this.node.group='crash';
-
+        cc.director.getScheduler().schedule(this.blink, this, 3, 1,0,false);
+    },
+    blink(){
+        var action = cc.blink(2, 10);
+        this.crash.runAction(action);
     },
     crashEnd(){
         this.crash.active=false;

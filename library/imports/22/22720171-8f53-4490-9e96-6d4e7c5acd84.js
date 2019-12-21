@@ -46,6 +46,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
     decreaseHealth: function decreaseHealth() {
         this.health--;
+        console.log(this.health);
     },
     getHealth: function getHealth() {
         return this.health;
@@ -70,10 +71,10 @@ cc.Class({
     },
 
     //prove can't be used
-    bulletDecrease: function bulletDecrease(bulletCount) {
-        console.log(bulletCount);
+    bulletDecrease: function bulletDecrease() {
+        console.log(this.bulletCount);
 
-        this.bulletCount = bulletCount;
+        this.bulletCount--;
     },
     getBullet: function getBullet() {
         return this.bulletCount;

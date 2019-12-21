@@ -54,13 +54,18 @@ cc.Class({
                 other.getComponent('Bullet').onHit();
             }
         console.log('collision enter');
-        if (self.group == 'player') {
-            this.gameManager.getComponent('GameManager').decreaseHealth();
-            self.group = 'default';
-            console.log('scheduler problem');
+        console.log('self.node.group', self.node.group);
 
-            cc.director.getScheduler().schedule(this.touchable(), this, 5, 1, 0, false);
-            console.log('scheduler problem');
+        if (self.node.group == 'player') {
+            console.log('decrease health call');
+
+            this.gameManager.getComponent('GameManager').decreaseHealth();
+            self.node.group = 'default';
+            // console.log('scheduler problem');
+            var action = cc.blink(5, 20);
+            self.node.runAction(action);
+            cc.director.getScheduler().schedule(this.touchable, this, 5, 1, 0, false);
+            // console.log('scheduler problem');
         }
     },
 

@@ -70,7 +70,7 @@
     "relativePath": "Scenes"
   },
   "e6b251ef-e829-4db8-94cc-89f996224ad7": {
-    "asset": 1575625992279,
+    "asset": 1576827978490,
     "meta": 1573570313520,
     "relativePath": "Scripts"
   },
@@ -130,7 +130,7 @@
     "relativePath": "Resources\\pic\\controlStick.png"
   },
   "fe58fbb7-c008-418d-a468-e2b41e501413": {
-    "asset": 1575629260621,
+    "asset": 1576836666169,
     "meta": 1574149105924,
     "relativePath": "Scripts\\player"
   },
@@ -225,8 +225,8 @@
     "relativePath": "Prefabs\\Bullets\\slowStone.prefab"
   },
   "e7ade8f3-579a-4354-ada0-42efdd7be615": {
-    "asset": 1575945258363,
-    "meta": 1575945258379,
+    "asset": 1575990230895,
+    "meta": 1575990230915,
     "relativePath": "Scenes\\GameItself.fire"
   },
   "8b5a75e0-e1db-4c18-9490-7e046e843670": {
@@ -1210,13 +1210,13 @@
     "relativePath": "Anim\\stone\\faststone\\stone.anim"
   },
   "ae752cce-a98c-4d2f-9c91-7b05818766b9": {
-    "asset": 1574996783707,
-    "meta": 1574997358414,
+    "asset": 1575946407283,
+    "meta": 1575946407296,
     "relativePath": "Prefabs\\Bullets\\fastStone.prefab"
   },
   "ed5d5f40-f754-46cb-ae17-95d3fb880048": {
-    "asset": 1574997339179,
-    "meta": 1574997363577,
+    "asset": 1575946413858,
+    "meta": 1575946413871,
     "relativePath": "Prefabs\\Bullets\\normalStone.prefab"
   },
   "9f2d485c-6f9d-4f34-9f7f-8e8125132890": {
@@ -1410,14 +1410,9 @@
     "relativePath": "Resources\\pic\\skill\\skillCrash\\skillBullet.png"
   },
   "715a7440-a417-4508-9d23-e9f496eb5115": {
-    "asset": 1575654806395,
+    "asset": 1576651511753,
     "meta": 1575625988576,
     "relativePath": "Scripts\\skill"
-  },
-  "35bce5de-bd7e-48c2-aafa-bc7635f194d1": {
-    "asset": 1575628709550,
-    "meta": 1575628716968,
-    "relativePath": "Scripts\\player\\PlayerSkill.js"
   },
   "3c10a61b-57e3-48f1-ad12-b23b910f9a1b": {
     "asset": 1575723640101,
@@ -1484,45 +1479,15 @@
     "meta": 1575725480981,
     "relativePath": "Prefabs\\Crashs\\onCrash5.prefab"
   },
-  "1391a239-f6f7-4f17-88b2-96dc15998657": {
-    "asset": 1575727914303,
-    "meta": 1575727949192,
-    "relativePath": "Scripts\\Boss\\AI.js"
-  },
   "b84b5ab0-496d-4165-92c9-1db14295b7c4": {
     "asset": 1575730988516,
     "meta": 1575730992693,
     "relativePath": "Scripts\\skill\\SkillReturn.js"
   },
-  "a6c9f6b5-16ca-4daa-8b46-decc51da0ae8": {
-    "asset": 1575739853201,
-    "meta": 1575739854280,
-    "relativePath": "Scripts\\Bullet.js"
-  },
-  "236f5362-32ef-444e-aebb-567cd4cc5952": {
-    "asset": 1575813227483,
-    "meta": 1575813231603,
-    "relativePath": "Scripts\\Boss\\BossProperty.js"
-  },
   "21ec96eb-a5b1-4fd8-9868-716b1d112030": {
     "asset": 1575860848050,
     "meta": 1575860853247,
     "relativePath": "Resources\\pic\\skill\\skillCrash\\crash.png"
-  },
-  "01f2457c-521c-41a2-92a0-56edce3736c1": {
-    "asset": 1575871881008,
-    "meta": 1575871885752,
-    "relativePath": "Scripts\\skill\\SkillManager.js"
-  },
-  "22720171-8f53-4490-9e96-6d4e7c5acd84": {
-    "asset": 1575877651086,
-    "meta": 1575877651677,
-    "relativePath": "Scripts\\GameManager.js"
-  },
-  "4a5aad26-9951-4b54-ad78-142cf8b9951c": {
-    "asset": 1575877710456,
-    "meta": 1575877711256,
-    "relativePath": "Scripts\\GameLogic.js"
   },
   "e1b6c898-1382-4c45-94fd-d954c126ca04": {
     "asset": 1575877707713,
@@ -1534,19 +1499,74 @@
     "meta": 1575878246744,
     "relativePath": "Prefabs\\Crashs\\Timer.js"
   },
-  "6a9e6262-f456-4d90-9630-7c30797d34ac": {
-    "asset": 1575878511040,
-    "meta": 1575878511593,
-    "relativePath": "Scripts\\Boss\\OnCrash.js"
-  },
   "450e91af-53f3-424c-8090-cacf3d15bfee": {
-    "asset": 1575880812853,
-    "meta": 1575880830386,
+    "asset": 1575946885625,
+    "meta": 1575946886188,
     "relativePath": "Scripts\\player\\PlayerCollider.js"
   },
   "ae49c4d5-c63e-4f65-921a-543c1bd06cae": {
-    "asset": 1575945075067,
-    "meta": 1575945076032,
+    "asset": 1575947080052,
+    "meta": 1575947082570,
     "relativePath": "Scripts\\player\\SkillActor.js"
+  },
+  "01f2457c-521c-41a2-92a0-56edce3736c1": {
+    "asset": 1575966938657,
+    "meta": 1575966940347,
+    "relativePath": "Scripts\\skill\\SkillManager.js"
+  },
+  "236f5362-32ef-444e-aebb-567cd4cc5952": {
+    "asset": 1575986211122,
+    "meta": 1575986212496,
+    "relativePath": "Scripts\\Boss\\BossProperty.js"
+  },
+  "1391a239-f6f7-4f17-88b2-96dc15998657": {
+    "asset": 1575986490242,
+    "meta": 1575986490979,
+    "relativePath": "Scripts\\Boss\\AI.js"
+  },
+  "4a5aad26-9951-4b54-ad78-142cf8b9951c": {
+    "asset": 1575986646170,
+    "meta": 1575990229446,
+    "relativePath": "Scripts\\GameLogic.js"
+  },
+  "a6c9f6b5-16ca-4daa-8b46-decc51da0ae8": {
+    "asset": 1576055860094,
+    "meta": 1576055861195,
+    "relativePath": "Scripts\\Bullet.js"
+  },
+  "84f728ac-e4b3-4d72-b416-897829412dbc": {
+    "asset": 1576827957624,
+    "meta": 1576827978514,
+    "relativePath": "Scripts\\StoneGenerator.ts"
+  },
+  "58f525ce-8f77-4c64-8248-9fbcb59ac1d8": {
+    "asset": 1576914444560,
+    "meta": 1576916298700,
+    "relativePath": "Scripts\\skill\\Skill.ts"
+  },
+  "5942419d-b41f-46e5-9a63-8cd0b599cb05": {
+    "asset": 1576916707213,
+    "meta": 1576916709778,
+    "relativePath": "Scripts\\Boss\\Boss.ts"
+  },
+  "6a9e6262-f456-4d90-9630-7c30797d34ac": {
+    "asset": 1576917166775,
+    "meta": 1576917180938,
+    "relativePath": "Scripts\\Boss\\OnCrash.js"
+  },
+  "7f7c0978-f07d-49e7-8450-e63cb7eefd91": {
+    "asset": 1576917174153,
+    "meta": 1576917180966,
+    "relativePath": "Scripts\\GameLogic.ts"
+  },
+  "22720171-8f53-4490-9e96-6d4e7c5acd84": {
+    "asset": 1576917171278,
+    "meta": 1576917181035,
+    "relativePath": "Scripts\\GameManager.js"
+  },
+  "adf13853-5b73-412f-9ec5-5e3263814c17": {
+    "asset": 1576917173191,
+    "meta": 1576917181036,
+    "relativePath": "Scripts\\player\\Player.ts"
   }
 }

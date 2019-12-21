@@ -113,11 +113,12 @@ cc.Class({
         this.node.addChild(newBullet);//add node to canvas
         newBullet.setPosition(this.generateRandomPos());
         newBullet.getComponent('Bullet').direction = bulletDirection;
+        newBullet.getComponent('Bullet').gameManager = this.gameManager;
         newBullet.getComponent('Bullet').switchDir();
         newBullet.getComponent('Bullet').speed = this.bulletSpeed * speedUp;
         newBullet.getComponent('Bullet').maxX = this.node.width;
         newBullet.getComponent('Bullet').maxY = this.node.height;
-        newBullet.getComponent('Bullet').gameManager = this.gameManager;
+        
         console.log('spwan bullet done');
         
     },
@@ -191,19 +192,24 @@ cc.Class({
     bossActive() {
         
         if (this.gameManager.getComponent('GameManager').getGameTime() > this.bossGenerateTime) {
-            this.gameManager.getComponent('GameManager').setGameTime(0);
+            
             this.stopBulletGeneration();
+            this.activeRadar();
             // if (this.gameManager.getComponent('GameManager').getBullet() <= 0) {
             //     this.skillChoice();
             // }
-            if (skillChance) {
-                this.radarState();
+            if (skillChance&&this.gameManager.getComponent('GameManager').getBullet()<10) {
+                this.closeRadar();
                 this.skillChoice();
                 skillChance=false;
+                this.gameManager.getComponent('GameManager').setGameTime(0);
             }
         }
     },
-    radarState(){
+    activeRadar(){
+        this.radar.active=true;
+    },
+    closeRadar(){
         this.radar.active=!this.radar.active;
     },
     // LIFE-CYCLE CALLBACKS:

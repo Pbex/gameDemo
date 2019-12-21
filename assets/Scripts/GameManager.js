@@ -40,6 +40,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
     decreaseHealth(){
         this.health--;
+        console.log(this.health);
     },
 
     getHealth(){
@@ -65,10 +66,10 @@ cc.Class({
         // console.log('game manager bullet add done');
     },
     //prove can't be used
-    bulletDecrease(bulletCount){
-        console.log(bulletCount);
+    bulletDecrease(){
+        console.log(this.bulletCount);
         
-        this.bulletCount=bulletCount;
+        this.bulletCount--;
     },
     
 

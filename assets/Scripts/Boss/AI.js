@@ -30,6 +30,7 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
+        gameManager:cc.Node,
         player: cc.Node,
         doingSth: false,
         canvas: cc.Node,
@@ -117,6 +118,7 @@ cc.Class({
             newBullet.setPosition(cc.v2(-this.canvas.width/2, this.player.position.y + yBias));
         }
         newBullet.getComponent('Bullet').direction = direction;
+        newBullet.getComponent('Bullet').gameManager=this.gameManager;
         newBullet.getComponent('Bullet').switchDir();
         newBullet.getComponent('Bullet').speed = this.bulletSpeed;
         newBullet.getComponent('Bullet').maxX = this.canvas.width;

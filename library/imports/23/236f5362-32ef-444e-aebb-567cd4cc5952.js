@@ -14,6 +14,7 @@ cc._RF.push(module, '236f5NiMu9ETq67VnzUzFlS', 'BossProperty');
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 var timer = 0;
+
 cc.Class({
     extends: cc.Component,
 
@@ -36,7 +37,8 @@ cc.Class({
         health: 500,
         state1: 250,
         state2: 100, //the certian number that makes the movement of boss become different
-        crashHandler: cc.Node
+        crashHandler: cc.Node,
+        blinking: false
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -58,7 +60,14 @@ cc.Class({
             this.health -= 5;
             self.getComponent('BossProperty').onCrash();
         }
-
+        if (!this.blinking) {
+            this.blinking = true;
+            var finished = cc.callFunc(function () {
+                this.blinking = false;
+            }, this, false);
+            var seq = cc.sequence(cc.blink(0.3, 3), finished);
+            this.node.runAction(seq);
+        }
         if (this.health < 0) {
             cc.director.loadScene("GameWin");
         }

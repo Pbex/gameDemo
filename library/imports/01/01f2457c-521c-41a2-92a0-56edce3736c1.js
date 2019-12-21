@@ -40,7 +40,7 @@ cc.Class({
         if (id == selectedSkill) {
             this.skillActor.getComponent('SkillActor').activateSkill(id);
             // console.log(this.node.active);
-            this.gameManager.radarState();
+            this.gameManager.closeRadar();
             this.node.active = false;
             // console.log(this.node.active);
         }
